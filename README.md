@@ -21,7 +21,7 @@ For database, MongoDB.
 
 ![image](https://github.com/RaghuSai-09/covid_vaccine/assets/89162131/e34126c0-4983-4ad1-95bc-b32dd1d514aa)
 
-## Logim and Signup:
+## Login and Signup:
 ![image](https://github.com/RaghuSai-09/covid_vaccine/assets/89162131/e4ecc1d1-6b34-4e1b-842c-f41d06ae5691)
 ![image](https://github.com/RaghuSai-09/covid_vaccine/assets/89162131/e4f683cc-34ea-40e8-bccb-be570da6a947)
 
