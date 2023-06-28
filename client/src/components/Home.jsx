@@ -64,7 +64,6 @@ const Home = () => {
       To combat the spread of COVID-19, various preventive measures have been implemented globally, including widespread testing, contact tracing, social distancing, mask-wearing, and frequent hand hygiene. Vaccines have also been developed and authorized for emergency use, offering hope for reducing the severity and spread of the disease.
       
       The COVID-19 pandemic has had profound social, economic, and health impacts worldwide. It has strained healthcare systems, disrupted economies, led to lockdowns and travel restrictions, and caused loss of lives and livelihoods. Efforts continue to mitigate the effects of the pandemic through vaccination campaigns, public health measures, and ongoing research and monitoring of the virus and its variants.</p>
-      {/* Add other content */}
     </div>
     </>
   );

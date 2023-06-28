@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+axios.defaults.headers.common['Authorization'] = localStorage.getItem('admin');
 const instance = axios.create({
   baseURL: 'http://localhost:5000', // Update with your backend URL
 });
@@ -7,7 +7,9 @@ const instance = axios.create({
 export const getVaccinationCenters = () => {
   return instance.get('/users/vaccinationcenters');
 };
-
+export const getBookedSlots = () => {
+  return instance.get('/admin/bookedslots');
+};
 export const vaccinationCenterSeacrh = () => {
   return instance.get('/users/vaccinationcenters/seacrh');
 };
@@ -16,16 +18,9 @@ export const adminlog = (data) => {
 };
 
 export const bookSlot = (data) => {
-  return instance.post('/slotbooking',data);
+  return instance.post('/users/slot-booking',data);
 };
 
-export const covid = (data) => {
-  return instance.get('/covid-info',data);
-};
-
-export const dosage = () => {
-  return instance.get('/admindashboard',);
-};
 export const login= (data) => {
   return instance.post('/users/login',data);
 };
@@ -34,7 +29,13 @@ export const signup = (data) => {
 };
 
 export const remove = (data) => {
-  return instance.post('/admindashboard',data);
+  return instance.delete(`/admin/vaccinationcenters/${data}`);
 };
 
-// Add additional API functions as needed
+export const addCenter = async (data,config) => {
+  return instance.post('/admin/vaccinationcenters/add',data,config);
+};
+
+export const logout = (data) => {
+  return instance.post('/users/logout',data);
+};

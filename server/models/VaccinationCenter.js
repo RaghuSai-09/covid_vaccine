@@ -15,10 +15,10 @@ const vaccinationCenterSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  availableSlots: {
-    type: Number,
+  dosage: {
+    type: String,
     required: true,
-  },
+  }
 });
 
 module.exports = mongoose.model('VaccinationCenter', vaccinationCenterSchema);

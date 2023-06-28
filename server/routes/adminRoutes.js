@@ -10,18 +10,16 @@ router.post('/login', adminController.login);
 
 // Add vaccination center
 router.post(
-  '/vaccination-centers',
-  authMiddleware.isAdmin,
+  '/vaccinationcenters/add',
   adminController.addVaccinationCenter
 );
 
 // Get dosage details
-router.get('/dosage-details', authMiddleware.isAdmin, adminController.getDosageDetails);
+router.get('/bookedslots', adminController.getBookedSlots);
 
 // Remove vaccination center
 router.delete(
-  '/vaccination-centers/:id',
-  authMiddleware.isAdmin,
+  '/vaccinationcenters/:id',
   adminController.removeVaccinationCenter
 );
 

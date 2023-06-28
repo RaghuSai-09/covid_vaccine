@@ -30,27 +30,26 @@ exports.vaccine = async (req,res) => {
     res.status(500).json({ message: 'Failed to search vaccination centers' });
   }
 };
-exports.Slot = async(req,res) => {
+
+exports.Slot = async (req, res) => {
   try {
-    // Get the slot data from the request body
-    const { slot } = req.body;
-
-    // Check if the slot is available
-    const existingSlot = await bookslot.findOne({ slot: slot });
-    if (!existingSlot) {
-      return res.status(400).json({ message: 'Slot is not available' });
-    }
-
-    // Check if the slot is already booked
-    if (existingSlot.booked) {
+    const { name, email, center, address, date } = req.body;
+    const existingSlot = await bookslot.findOne({ date: date, booked: true });
+    if (existingSlot) {
       return res.status(400).json({ message: 'Slot is already booked' });
     }
-
-    // Book the slot
-    existingSlot.booked = true;
-    await existingSlot.save();
-
-    // Send a success response
+    const bookedSlotsCount = await bookslot.countDocuments({ date: date, booked: true });
+    if (bookedSlotsCount >= 10) {
+      return res.status(400).json({ message: 'Maximum limit for bookings on this date reached' });
+    }
+    const newSlot = new bookslot({
+      name: name,
+      email: email,
+      center_address: address,
+      date: date,
+      booked: true,
+    });
+    await newSlot.save();
     res.status(200).json({ message: 'Slot booked successfully' });
   } catch (error) {
     console.error(error);

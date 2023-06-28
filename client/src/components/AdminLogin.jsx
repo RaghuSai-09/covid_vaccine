@@ -4,7 +4,7 @@ import * as api from '../api.js';
 import { Transition } from '@headlessui/react';
 import { useNavigate } from 'react-router-dom';
 
-const AdminLogin = ({ handleAdminLogin }) => {
+const AdminLogin = () => {
   const [email, setemail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -17,11 +17,13 @@ const AdminLogin = ({ handleAdminLogin }) => {
 
     try {
       const response = await api.adminlog({ email, password });
-
+      const token = response.data;
+      localStorage.setItem('admin',token);
       if (response.status === 200) {
         // Admin login successful
         setError('');
-        handleAdminLogin();
+        window.alert('Admin login successful');
+        
         navigate('/admindashboard');
 
       } else {
@@ -29,8 +31,8 @@ const AdminLogin = ({ handleAdminLogin }) => {
       }
     } catch (error) {
       console.error(error);
-      setError('Failed to login');
-      navigate('/admindashboard');
+      setError(error.response.data.message);
+      // navigate('/admindashboard');
     } finally {
       setLoading(false);
     }
