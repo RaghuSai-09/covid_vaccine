@@ -8,15 +8,20 @@ The USER Privileges:
   2. Users can view the vaccination centers and can search the centers using working hours.
   User Credentials:
   email: ccc@gmail.com
+
   password: ccc
+
 The ADMIN Privileges:
   1. Admin can add Vaccination Centers
   2. Delete the centers
   3. Get dosage details of Centers
 
   Admin Credentials:
+  
   email: tarun@gmail.com
+
   password: 1234
+  
 For the front end, I have used React JS, and for styling used Tailwindcss to develop a Simple UI.
 For the back end, Node JS, Express JS.
 For database, MongoDB.
