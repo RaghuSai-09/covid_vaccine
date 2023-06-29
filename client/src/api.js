@@ -1,7 +1,7 @@
 import axios from 'axios';
 axios.defaults.headers.common['Authorization'] = localStorage.getItem('admin');
 const instance = axios.create({
-  baseURL: 'http://localhost:5000', // Update with your backend URL
+  baseURL: 'https://covid-vaccine-hc8t.onrender.com', // Update with your backend URL
 });
 
 export const getVaccinationCenters = () => {
