@@ -50,7 +50,7 @@ const UserDashboard = () => {
       const response = await api.bookSlot(data);
       setBookingMessage(response.data.message);
       window.alert(response.data.message);
-      window.location.replace('/userdashboard');
+      navigate('/userdadhboard');
     } catch (error) {
       console.error(error);
     }

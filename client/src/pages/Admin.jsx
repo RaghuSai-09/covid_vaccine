@@ -88,7 +88,7 @@ const AdminDashboard = () => {
       });
       setShowAddForm(false);
       fetchVaccinationCenters();
-      window.location.replace('/admindashboard');
+      navigate('/admindashboard');
     } catch (error) {
       console.error(error);
     }
