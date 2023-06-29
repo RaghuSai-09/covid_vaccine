@@ -6,10 +6,11 @@ As Covid cases are rising, we have a website that can help to book the slot, to 
 The USER Privileges:
   1. Users need to log in first, then can avail of the slot.
   2. Users can view the vaccination centers and can search the centers using working hours.
-  User Credentials:
-  email: ccc@gmail.com
 
-  password: ccc
+  User Credentials:
+
+  Email: ccc@gmail.com
+  Password: ccc
 
 The ADMIN Privileges:
   1. Admin can add Vaccination Centers
@@ -18,9 +19,8 @@ The ADMIN Privileges:
 
   Admin Credentials:
   
-  email: tarun@gmail.com
-
-  password: 1234
+  Email: tarun@gmail.com
+  Password: 1234
   
 For the front end, I have used React JS, and for styling used Tailwindcss to develop a Simple UI.
 For the back end, Node JS, Express JS.
