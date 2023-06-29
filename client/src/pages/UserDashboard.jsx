@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import * as api from '../api.js';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -13,6 +14,7 @@ const UserDashboard = () => {
   const [userEmail, setUserEmail] = useState('');
   const [selectedCenter, setSelectedCenter] = useState('');
   const [date, setDate] = useState(null); 
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Fetch vaccination centers
@@ -80,7 +82,7 @@ const UserDashboard = () => {
     try {
       await api.logout();
       localStorage.clear('Profile');
-      window.location.replace('/login');
+      navigate('/');
     } catch (error) {
       console.error(error);
     }
