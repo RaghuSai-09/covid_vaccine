@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import * as api from '../api';
+import { useNavigate } from 'react-router-dom';
 
 const AdminDashboard = () => {
   const [vaccinationCenters, setVaccinationCenters] = useState([]);
   const [showAddForm, setShowAddForm] = useState(false); 
+  const navigate = useNavigate();
   const [dosageDetails, setDosageDetails] = useState(false);
   const [newCenter, setNewCenter] = useState({
     name: '',
@@ -37,7 +39,7 @@ const AdminDashboard = () => {
     try{
       await api.logout();
       localStorage.clear('admin');
-      window.location.replace('/admin');
+      navigate('/');
     }catch(error){
       console.error(error);
     }

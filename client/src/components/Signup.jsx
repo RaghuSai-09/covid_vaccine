@@ -16,11 +16,9 @@ const Signup = () => {
       const response = await api.signup({ name, email, password });
       console.log(response);
       if (response.status === 201) {
-        // User registration successful
         setError('');
         setSignupSuccess(true);
         navigate('/login');
-        // Redirect to the login page or perform any other necessary action
       } else {
         setError('Failed to register 1');
       }

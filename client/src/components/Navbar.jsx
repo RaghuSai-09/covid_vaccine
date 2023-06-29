@@ -1,12 +1,13 @@
 import React,{useEffect} from 'react';
 import decode from 'jwt-decode';
-import { Link} from 'react-router-dom';
+import { Link,useNavigate} from 'react-router-dom';
 import logo from '../files/logo.png'
 import mt from '../files/mt.png';
 const Navbar = () => {
 
   const user = localStorage.getItem('Profile');
   const admin =  localStorage.getItem('admin');
+  const navigate = useNavigate();
 
   useEffect(()=>{
     const token=user?.token
@@ -20,11 +21,11 @@ const Navbar = () => {
 
   const handleLogout = async() => {
     try{
-      
-        localStorage.clear('Profile');
-      
-      localStorage.clear('admin');
-      window.location.replace('/');
+      if(user){
+      localStorage.clear('Profile');}
+      else if(admin){
+      localStorage.clear('admin');}
+      navigate('/');
     }catch(error){
       console.error(error);
     }
