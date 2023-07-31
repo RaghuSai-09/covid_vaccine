@@ -25,6 +25,9 @@ The ADMIN Privileges:
 For the front end, I have used React JS, and for styling used Tailwindcss to develop a Simple UI.
 For the back end, Node JS, Express JS.
 For database, MongoDB.
+
+## Live Link: 
+https://vaccination-booking.netlify.app/
   
 ## Home Page:
 ![image](https://github.com/RaghuSai-09/covid_vaccine/assets/89162131/ab4962c0-42af-4d08-8945-7d4cd0338a90)
